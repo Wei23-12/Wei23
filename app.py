@@ -7,9 +7,9 @@ redis = Redis(host="redis")
 @app.route("/")
 def hello():
     visits = redis.incr('counter')
-    html = "<h3>Hello World!<h3>" \
-            "<b>Visits:<b> {visits}" \
-            "<br/>"
+    html = "<h3>Hello World!</h3>" \
+           "<b>Visits:<b> {visits}" \
+           "<br/>"
     return html.format(visits=visits)
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
