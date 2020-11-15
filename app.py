@@ -8,7 +8,7 @@ redis = Redis(host="redis")
 def hello():
     visits = redis.incr('counter')
     html = "<h3>Hello World!</h3>" \
-           "<b>Visits:<b> {visits}" \
+           "<b>Visits:</b> {visits}" \
            "<br/>"
     return html.format(visits=visits)
 if __name__ == "__main__":
